@@ -44,3 +44,76 @@
       <script src="calculator.js"></script>
 </body>
 </html>
+# caculator.js
+let string = "";
+let buttons = document.querySelectorAll('.button');
+Array.from(buttons).forEach((button)=>{
+    button.addEventListener('click', (e)=>{
+        if(e.target.innerHTML == '='){
+            string = eval(string);
+            document.querySelector('input').value = string;
+        }
+        else if(e.target.innerHTML == 'C'){
+            string = "";
+            document.querySelector('input').value = string;
+        }
+        else{
+        console.log(e.target)
+        string = string + e.target.innerHTML;
+        document.querySelector('input').value = string;
+        }
+    })
+
+})
+        
+ # utils.css
+ *{
+    margin:0;
+    padding:0;
+   
+}
+body{
+    background-color: black;
+}
+.centre{
+    text-align: center;
+    font-size: 70px;
+    font-weight: bold;
+    color:white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.mx-auto{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    padding: 10px 40px;
+    margin: 0 3px;
+    border: 2px solid aqua;
+    border-radius: 20px;
+    cursor:pointer;
+    font-size: 40px;
+}
+.button:hover{
+    color:red;
+}
+.row{
+    margin: 12px 0;
+}
+.input{
+    font-size: 40px;
+    padding: 10px;
+    color:blue;
+    border: 2px solid orangered;
+    border-radius: 20px;
+}
+
+
+ 
+ 
+       
